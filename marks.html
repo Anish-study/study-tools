@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marks Percentage Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>Marks → Percentage</h2>
+
+  <input id="obtained" type="number" placeholder="Marks Obtained">
+  <input id="total" type="number" placeholder="Total Marks">
+
+  <button onclick="calculate()">Calculate</button>
+
+  <p id="result"></p>
+
+  <a href="index.html">← Back to Home</a>
+</div>
+
+<script>
+function calculate() {
+  let o = Number(document.getElementById("obtained").value);
+  let t = Number(document.getElementById("total").value);
+
+  if (t === 0) {
+    document.getElementById("result").innerText = "Total marks cannot be zero";
+  } else {
+    let percent = (o / t) * 100;
+    document.getElementById("result").innerText =
+      "Percentage: " + percent.toFixed(2) + "%";
+  }
+}
+</script>
+
+</body>
+</html>
