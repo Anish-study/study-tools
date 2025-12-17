@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profit & Loss Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button {
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Profit & Loss</h2>
+
+    <input type="number" id="cp" placeholder="Cost Price">
+    <input type="number" id="sp" placeholder="Selling Price">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h3 id="result"></h3>
+</div>
+
+<script>
+function calculate() {
+    var cp = Number(document.getElementById("cp").value);
+    var sp = Number(document.getElementById("sp").value);
+    var result = document.getElementById("result");
+
+    if (sp > cp) {
+        result.innerHTML = "Profit = " + (sp - cp);
+    } else if (cp > sp) {
+        result.innerHTML = "Loss = " + (cp - sp);
+    } else {
+        result.innerHTML = "No Profit No Loss";
+    }
+}
+</script>
+
+</body>
+</html>s

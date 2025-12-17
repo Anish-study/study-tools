@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f6ff;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Percentage Calculator</h2>
+    <input type="number" id="marks" placeholder="Marks obtained">
+    <input type="number" id="total" placeholder="Total marks">
+    <button onclick="calc()">Calculate</button>
+    <h3 id="result"></h3>
+</div>
+
+<script>
+function calc() {
+    let marks = document.getElementById("marks").value;
+    let total = document.getElementById("total").value;
+
+    if (marks === "" || total === "") {
+        document.getElementById("result").innerHTML = "Enter all values";
+        return;
+    }
+
+    let percent = (marks / total) * 100;
+    document.getElementById("result").innerHTML =
+        "Percentage: " + percent.toFixed(2) + "%";
+}
+</script>
+
+</body>
+</html>
